@@ -1,0 +1,18 @@
+<div ng-if="myInfoCtrl.isRegistered">
+    <h2>Your Registered Information</h2>
+    <p><strong>First Name:</strong> {{myInfoCtrl.userPreferences.firstName}}</p>
+    <p><strong>Last Name:</strong> {{myInfoCtrl.userPreferences.lastName}}</p>
+    <p><strong>Email:</strong> {{myInfoCtrl.userPreferences.email}}</p>
+    <p><strong>Phone:</strong> {{myInfoCtrl.userPreferences.phone}}</p>
+    <p><strong>Favorite Menu Item:</strong></p>
+    <div>
+      <img ng-src="images/menu/{{myInfoCtrl.userPreferences.category.short_name}}/{{myInfoCtrl.userPreferences.favoriteMenuItem.short_name}}.jpg" alt="{{myInfoCtrl.userPreferences.favoriteMenuItem.name}}">
+      <p><strong>{{myInfoCtrl.userPreferences.favoriteMenuItem.name}}</strong></p>
+      <p>{{myInfoCtrl.userPreferences.favoriteMenuItem.description}}</p>
+    </div>
+  </div>
+  <div ng-if="!myInfoCtrl.isRegistered">
+    <h2>{{myInfoCtrl.message}}</h2>
+    <button ng-click="myInfoCtrl.signUpLink()">Sign up Now!</button>
+  </div>
+  

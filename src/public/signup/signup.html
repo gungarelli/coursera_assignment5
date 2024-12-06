@@ -1,0 +1,38 @@
+<div>
+  <h2>Sign Up for Newsletter</h2>
+  <form name="signUpForm" ng-submit="signUpCtrl.submitForm(signUpForm)" novalidate>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" ng-model="signUpCtrl.user.firstName" name="firstName" required>
+      <div class="error-message" ng-show="signUpForm.firstName.$touched && signUpForm.firstName.$invalid">First Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" ng-model="signUpCtrl.user.lastName" name="lastName" required>
+      <div class="error-message" ng-show="signUpForm.lastName.$touched && signUpForm.lastName.$invalid">Last Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" ng-model="signUpCtrl.user.email" name="email" required>
+      <div class="error-message" ng-show="signUpForm.email.$touched && signUpForm.email.$invalid">Valid Email is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" ng-model="signUpCtrl.user.phone" name="phone" required>
+      <div class="error-message" ng-show="signUpForm.phone.$touched && signUpForm.phone.$invalid">Phone number is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="menuNumber">Favorite Menu Number:</label>
+      <input type="text" id="menuNumber" ng-model="signUpCtrl.user.menuNumber" name="menuNumber" required>
+      <div class="error-message" ng-show="signUpForm.menuNumber.$touched && signUpForm.menuNumber.$invalid">Favorite Menu Number is required</div>
+    </div>
+
+    <button type="submit">Submit</button>
+    <div class="error-message" ng-show="signUpCtrl.menuNumberInvalid">No such menu number exists</div>
+    <div ng-show="signUpCtrl.saveSuccess">Your information has been saved</div>
+  </form>
+</div>
